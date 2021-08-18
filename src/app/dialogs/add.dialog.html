@@ -1,0 +1,33 @@
+<div class="container">
+<h3 mat-dialog-title>Add Customer</h3>
+
+<form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">    
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Name" [(ngModel)]="data.name" name="name" required>
+            <mat-error *ngIf="formControl.invalid">Provide name</mat-error>
+        </mat-form-field> 
+    </div>   
+        
+    <div class="form">    
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Age" [(ngModel)]="data.age" name="age" required>
+            <mat-error *ngIf="formControl.invalid">Provide age</mat-error>
+        </mat-form-field> 
+    </div>   
+        
+    <div class="form">    
+        <mat-form-field color="accent">
+            <input matInput #input class="form-control" placeholder="Email" [(ngModel)]="data.email" name="email" required>
+            <mat-error *ngIf="formControl.invalid">Provide email</mat-error>
+        </mat-form-field> 
+    </div>
+               
+        <div mat-dialog-actions>
+            <button mat-button [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="addNewCustomer()">Save</button>
+            <button mat-button (click)="close()">Cancel</button>
+        </div>
+
+</form>
+</div>

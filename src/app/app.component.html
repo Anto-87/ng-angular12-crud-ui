@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+     <span>SRLite</span>
+     <span class="spacer"></span>
+    
+  <!--<button mat-button *ngIf="isLoggedIn$ | async" (click)="toCustomer()">Customer</button> -->
+  <button mat-button *ngIf="isLoggedIn$ | async" (click)="onLogout()">Logout</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
